@@ -1,0 +1,9 @@
+{
+    "COLOR_MENU": {
+        "menu": [
+            ["紅色", "Pixetto::COLOR_RED"],
+            ["黃色", "Pixetto::COLOR_YELLOW"],
+            ["綠色", "Pixetto::COLOR_GREEN"]
+        ]
+    }
+}

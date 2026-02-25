@@ -1,0 +1,27 @@
+{
+  "name": {
+    "zh-cn": "Pixetto与马达控制",
+    "en": "Pixetto and Motor Control"
+  },
+  "description": {
+    "zh-cn": "Pixetto视觉传感器颜色识别 + 双马达控制积木",
+    "en": "Pixetto vision sensor color detection and dual motor control blocks"
+  },
+  "author": "user",
+  "email": "user@qq.com",
+  "license": "MIT",
+  "isBoard": false,
+  "id": "pixetto_motor_control",
+  "platform": ["win", "mac", "web"],
+  "version": "0.0.1",
+  "asset": {
+    "arduinoC": {
+      "dir": "arduinoC/",
+      "version": "0.0.1",
+      "board": [
+        "arduino"
+      ],
+      "main": "main.ts"
+    }
+  }
+}
