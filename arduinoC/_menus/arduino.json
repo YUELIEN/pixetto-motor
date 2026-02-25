@@ -5,5 +5,19 @@
             ["黃色", "Pixetto::COLOR_YELLOW"],
             ["綠色", "Pixetto::COLOR_GREEN"]
         ]
+    },
+    "LINE_POSITION_MENU": {
+        "menu": [
+            ["全部", "0"],
+            ["右邊", "1"],
+            ["左邊", "2"],
+            ["沒有", "3"]
+        ]
+    },
+    "LINE_COLOR_MENU": {
+        "menu": [
+            ["黑", "0"],
+            ["白", "1"]
+        ]
     }
 }
