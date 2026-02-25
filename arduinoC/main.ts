@@ -32,7 +32,7 @@ namespace pixetto_motor {
     }
 
     // ────────── 偵測到指定顏色？ ──────────
-    //% block="偵測到 [COLOR] ？"
+    //% block="Pixetto感測器 偵測到 [COLOR] ？"
     //% blockType="boolean"
     //% COLOR.shadow="dropdown" COLOR.options="COLOR_MENU" COLOR.defl="COLOR_MENU.red"
     //% weight=90
