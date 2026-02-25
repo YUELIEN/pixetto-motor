@@ -1,14 +1,14 @@
 {
   "name": {
-    "zh-cn": "Pixetto與馬達控制",
+    "zh-cn": "Pixetto与马达控制",
     "en": "Pixetto and Motor Control"
   },
   "description": {
-    "zh-cn": "Pixetto視覺感應器顏色辨識 + 雙馬達控制積木",
+    "zh-cn": "Pixetto视觉传感器颜色识别 + 双马达控制积木",
     "en": "Pixetto vision sensor color detection and dual motor control blocks"
   },
-  "author": "YUELIEN",
-  "email": "chnrobinlee@gmail.com",
+  "author": "user",
+  "email": "user@qq.com",
   "license": "MIT",
   "isBoard": false,
   "id": "pixetto_motor_control",
