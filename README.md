@@ -12,8 +12,7 @@
 1. 開啟 Mind+ → 擴展 → 用戶庫
 2. 搜尋欄貼上：
 ```text
-[https://github.com/YUELIEN/pixetto-motor](https://github.com/YUELIEN/pixetto-motor)
-
+https://github.com/YUELIEN/pixetto-motor
 ```
 
 ## 硬體接線配置
