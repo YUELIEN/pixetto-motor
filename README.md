@@ -1,6 +1,6 @@
 # Pixetto 與馬達控制 Mind+ 用戶庫
 
-在 Mind+（上傳模式）中使用 Pixetto 視覺感測器進行顏色辨識，並結合循線感測器，控制雙馬達。支援標準 Arduino 腳位以及 mBot mCore 控制板。
+在 Mind+（上傳模式）中使用 Pixetto 視覺感測器進行顏色辨識，並結合循線感測器，控制雙馬達。支援標準 Arduino Uno 腳位以及 mBot mCore 控制板。
 
 ## 載入方式
 
