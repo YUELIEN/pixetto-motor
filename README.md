@@ -103,4 +103,3 @@ arduinoC/libraries/PixettoLite/
 ## 授權
 
 [MIT License]
-```
