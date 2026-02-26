@@ -13,11 +13,11 @@
   "isBoard": false,
   "id": "pixetto_motor_control",
   "platform": ["win", "mac", "web"],
-  "version": "0.0.1",
+  "version": "0.0.2",
   "asset": {
     "arduinoC": {
       "dir": "arduinoC/",
-      "version": "0.0.1",
+      "version": "0.0.2",
       "board": [
         "arduino"
       ],

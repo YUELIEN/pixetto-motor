@@ -1,4 +1,10 @@
 {
+    "FUNC_MENU": {
+        "menu": [
+            ["顏色偵測", "Pixetto::FUNC_COLOR_DETECTION"],
+            ["神經網路辨識", "Pixetto::FUNC_NEURAL_NETWORK"]
+        ]
+    },
     "COLOR_MENU": {
         "menu": [
             ["紅色", "Pixetto::COLOR_RED"],

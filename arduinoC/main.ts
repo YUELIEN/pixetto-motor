@@ -31,15 +31,46 @@ namespace pixetto_motor {
         );
     }
 
-    // ────────── 偵測到指定顏色？ ──────────
-    //% block="Pixetto感測器 偵測到 [COLOR] ？"
+    // ────────── 切換 Pixetto 偵測功能 ──────────
+    //% block="設定 Pixetto 偵測功能為 [FUNC]"
+    //% blockType="command"
+    //% FUNC.shadow="dropdown" FUNC.options="FUNC_MENU" FUNC.defl="FUNC_MENU.color"
+    //% weight=95
+    export function setPixettoFunc(parameter: any, block: any): void {
+        let func = parameter.FUNC.code;
+        Generator.addCode(`ss.enableFunc(${func});\n`);
+    }
+
+    // ────────── 獨立的 isDetected 判斷 ──────────
+    //% block="Pixetto 偵測到物體？"
+    //% blockType="boolean"
+    //% weight=94
+    export function isDetected(parameter: any, block: any): void {
+        Generator.addCode(["ss.isDetected()", Generator.ORDER_ATOMIC]);
+    }
+
+    // ────────── 神經網路辨識 條件判斷 ──────────
+    //% block="功能為 神經網路辨識 且 偵測到 ID [ID] ？"
+    //% blockType="boolean"
+    //% ID.shadow="number" ID.defl=1
+    //% weight=93
+    export function detectNeuralNetwork(parameter: any, block: any): void {
+        let id = parameter.ID.code;
+        Generator.addCode([
+            `(ss.getFuncID() == Pixetto::FUNC_NEURAL_NETWORK && ss.getTypeID() == ${id})`,
+            Generator.ORDER_ATOMIC
+        ]);
+    }
+
+    // ────────── 顏色偵測 條件判斷 ──────────
+    //% block="功能為 顏色偵測 且 偵測到 [COLOR] ？"
     //% blockType="boolean"
     //% COLOR.shadow="dropdown" COLOR.options="COLOR_MENU" COLOR.defl="COLOR_MENU.red"
-    //% weight=90
+    //% weight=92
     export function detectColor(parameter: any, block: any): void {
         let color = parameter.COLOR.code;
         Generator.addCode([
-            `(ss.isDetected() && ss.getFuncID() == Pixetto::FUNC_COLOR_DETECTION && ss.getTypeID() == ${color})`,
+            `(ss.getFuncID() == Pixetto::FUNC_COLOR_DETECTION && ss.getTypeID() == ${color})`,
             Generator.ORDER_ATOMIC
         ]);
     }
@@ -86,7 +117,7 @@ inline bool pixetto_lineCheck(int position, int lineColor) {
     export function motorForward(parameter: any, block: any): void {
         let power = parameter.POWER.code;
         Generator.addCode(
-            `digitalWrite(4, HIGH);\n\tanalogWrite(5, map(constrain(${power},0,100),0,100,0,255));\n\tdigitalWrite(7, LOW);\n\tanalogWrite(6, map(constrain(${power},0,100),0,100,0,255));`
+            `digitalWrite(4, HIGH);\n\tanalogWrite(5, map(constrain(${power},0,100),0,100,0,255));\n\tdigitalWrite(7, LOW);\n\tanalogWrite(6, map(constrain(${power},0,100),0,100,0,255));\n`
         );
     }
 
@@ -98,7 +129,7 @@ inline bool pixetto_lineCheck(int position, int lineColor) {
     export function motorBackward(parameter: any, block: any): void {
         let power = parameter.POWER.code;
         Generator.addCode(
-            `digitalWrite(4, LOW);\n\tanalogWrite(5, map(constrain(${power},0,100),0,100,0,255));\n\tdigitalWrite(7, HIGH);\n\tanalogWrite(6, map(constrain(${power},0,100),0,100,0,255));`
+            `digitalWrite(4, LOW);\n\tanalogWrite(5, map(constrain(${power},0,100),0,100,0,255));\n\tdigitalWrite(7, HIGH);\n\tanalogWrite(6, map(constrain(${power},0,100),0,100,0,255));\n`
         );
     }
 
@@ -110,7 +141,7 @@ inline bool pixetto_lineCheck(int position, int lineColor) {
     export function motorTurnLeft(parameter: any, block: any): void {
         let power = parameter.POWER.code;
         Generator.addCode(
-            `digitalWrite(4, HIGH);\n\tanalogWrite(5, map(constrain(${power},0,100),0,100,0,255));\n\tdigitalWrite(7, HIGH);\n\tanalogWrite(6, map(constrain(${power},0,100),0,100,0,255));`
+            `digitalWrite(4, HIGH);\n\tanalogWrite(5, map(constrain(${power},0,100),0,100,0,255));\n\tdigitalWrite(7, HIGH);\n\tanalogWrite(6, map(constrain(${power},0,100),0,100,0,255));\n`
         );
     }
 
@@ -122,7 +153,7 @@ inline bool pixetto_lineCheck(int position, int lineColor) {
     export function motorTurnRight(parameter: any, block: any): void {
         let power = parameter.POWER.code;
         Generator.addCode(
-            `digitalWrite(4, LOW);\n\tanalogWrite(5, map(constrain(${power},0,100),0,100,0,255));\n\tdigitalWrite(7, LOW);\n\tanalogWrite(6, map(constrain(${power},0,100),0,100,0,255));`
+            `digitalWrite(4, LOW);\n\tanalogWrite(5, map(constrain(${power},0,100),0,100,0,255));\n\tdigitalWrite(7, LOW);\n\tanalogWrite(6, map(constrain(${power},0,100),0,100,0,255));\n`
         );
     }
 
@@ -131,6 +162,6 @@ inline bool pixetto_lineCheck(int position, int lineColor) {
     //% blockType="command"
     //% weight=40
     export function motorStop(parameter: any, block: any): void {
-        Generator.addCode(`analogWrite(5, 0);\n\tanalogWrite(6, 0);`);
+        Generator.addCode(`analogWrite(5, 0);\n\tanalogWrite(6, 0);\n`);
     }
 }
